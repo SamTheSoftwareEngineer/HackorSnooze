@@ -21,17 +21,27 @@ async function getAndShowStoriesOnStart() {
  */
 
 function generateStoryMarkup(story, showDeleteBtn = false) {
-  // console.debug("generateStoryMarkup", story);
+  console.debug("generateStoryMarkup", story);
 
   const hostName = story.getHostName();
 
   // if a user is logged in, show favorite/not-favorite star
   const showStar = Boolean(currentUser);
 
+
   return $(`
+// This line creates an HTML list item element with an ID attribute set to the storyId property of the story object.
       <li id="${story.storyId}">
+// This line uses a ternary operator to conditionally include the result of a function call that generates HTML for a delete button 
+// (will only show if truthy)
         ${showDeleteBtn ? getDeleteBtnHTML() : ""}
+// conditionally includes HTML for a "star" button that allows users to mark the story as a favorite. 
+// If the showStar variable is truthy, 
+// the getStarHTML() function is called with the story object and currentUser object as arguments to generate the HTML for the star button
         ${showStar ? getStarHTML(story, currentUser) : ""}
+// This line creates an HTML anchor element that displays the title property of the story object as a clickable link. 
+// The href attribute is set to the url property of the story object, 
+// and the target attribute is set to "_blank" so that the link opens in a new tab.
         <a href="${story.url}" target="a_blank" class="story-link">
           ${story.title}
         </a>
@@ -69,7 +79,7 @@ function putStoriesOnPage() {
 
   $allStoriesList.empty();
 
-  // loop through all of our stories and generate HTML for them
+  // loop through all of the stories and generate HTML for them
   for (let story of storyList.stories) {
     const $story = generateStoryMarkup(story);
     $allStoriesList.append($story);
@@ -168,7 +178,7 @@ function putFavoritesListOnPage() {
 /** Handle favorite/un-favorite a story */
 
 async function toggleStoryFavorite(evt) {
-  console.debug("toggleStoryFavorite");
+  console.debug("toggleStoryFavorite"); // Ask abut debug and why this is neccesary!
 
   const $tgt = $(evt.target);
   const $closestLi = $tgt.closest("li");
