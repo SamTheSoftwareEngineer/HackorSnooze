@@ -17,7 +17,7 @@ $body.on("click", "#nav-all", navAllStories);
 /** Show story submit form on clicking story "submit" */
 
 function navSubmitStoryClick(evt) {
-  console.debug("navSubmitStoryClick", evt);
+  console.debug("navSubmitStoryClick", evt); // Not sure what debug does yet, just mimicked the format of the existing code
   hidePageComponents();
   $allStoriesList.show();
   $submitForm.show();
