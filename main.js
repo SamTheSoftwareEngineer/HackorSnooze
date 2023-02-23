@@ -1,7 +1,6 @@
 "use strict";
 
-// So we don't have to keep re-finding things on page, find DOM elements once:
-
+// Finding the DOM elements on the HTML Page
 const $body = $("body");
 
 const $storiesLoadingMsg = $("#stories-loading-msg");
@@ -16,7 +15,7 @@ const $loginForm = $("#login-form");
 const $signupForm = $("#signup-form");
 
 const $submitForm = $("#submit-form");
-
+// Added navSubmitStory for the new option that we added
 const $navSubmitStory = $("#nav-submit-story");
 const $navLogin = $("#nav-login");
 const $navUserProfile = $("#nav-user-profile");
