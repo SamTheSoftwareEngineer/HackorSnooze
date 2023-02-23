@@ -46,6 +46,15 @@ class StoryList {
    *  - returns the StoryList instance.
    */
 
+// The static keyword in JavaScript is used to define a method or property on a class that belongs to the class itself, 
+// rather than to its instances.
+// This means that you can access the method or property directly on the class, without having to create an object from the class first
+  
+// Why is that important?
+  // 1. Organization: rather than having a bunch of related functions within your code, you can group them together as single methods on a class
+  // 2. Encapsulation: describes the idea of bundling data and methods that work on that data within one unit, allows us to hide data from a user 
+  // and allows us to limit user interaction with the data 
+
   static async getStories() {
     // Note presence of `static` keyword: this indicates that getStories is
     //  **not** an instance method. Rather, it is a method that is called on the
