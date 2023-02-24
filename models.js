@@ -238,10 +238,10 @@ class User {
   /** Add a story to the list of user favorites and update the API
    * - story: a Story instance to add to favorites
    */
-
+  // Makes a network request to the API to add the story to the user's list of favorites on the server
   async addFavorite(story) {
-    this.favorites.push(story);
-    await this._addOrRemoveFavorite("add", story)
+    this.favorites.push(story); // Changes locally stored copy
+    await this._addOrRemoveFavorite("add", story) // Send request to API and waits for response 
   }
 
   /** Remove a story to the list of user favorites and update the API
