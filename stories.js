@@ -107,7 +107,6 @@ $ownStories.on("click", ".trash-can", deleteStory);
 /** Handle submitting new story form. */
 
 async function submitNewStory(evt) {
-  console.debug("submitNewStory");
   evt.preventDefault();
 
   // grab all info from form
